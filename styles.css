@@ -180,3 +180,54 @@ select {
 .round-info-message {
     font-size: 20px;
 }
+
+#gameover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    height: 300px;
+    padding: 20px;
+    background-color: rgb(28, 36, 59);
+    border: 2px solid #000;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+    gap: 25px;
+}
+
+#gameover p {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#play-again-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+}
+
+#play-again-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.blur-background {
+    filter: blur(10px);
+}

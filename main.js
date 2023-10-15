@@ -3,15 +3,27 @@ let playerOption = null;
 let computerOption = null;
 let playerScore = 0;
 let computerScore = 0;
+let winner = null;
+let isGameOver = false;
 
+const appElement = document.getElementById('app');
 const optionElements = document.getElementsByClassName('option');
 const roundMessageElement = document.getElementById('round-message');
 const playerScoreElement = document.getElementById('player-score');
 const computerScoreElement = document.getElementById('computer-score');
 const roundInfoElement = document.getElementById('round-info');
+const gameoverSectionElement = document.getElementById('gameover');
+const playAgainBtnElement = document.getElementById('play-again-btn');
+
+playAgainBtnElement.addEventListener('click', function(event) {
+    resetGame();
+});
 
 for (let option of optionElements) {
     option.addEventListener('click', function(event) {
+        if (isGameOver) {
+            return;
+        }
         if (this.id === 'option-rock') {
             playerOption = optionsValue[0];
         }
@@ -37,6 +49,7 @@ for (let option of optionElements) {
         playerScoreElement.innerHTML = playerScore;
         computerScoreElement.innerHTML = computerScore;
         roundInfoElement.innerHTML = `You chose ${playerOption.toUpperCase()}. Computer chose ${computerOption.toUpperCase()}. ` + message;
+        manageGameWinner();
     });
 }
 
@@ -53,4 +66,26 @@ function manageRoundWinner(playerOption, computerOption) {
     } else {
         return 'Computer';
     }
+}
+
+function manageGameWinner() {
+    if (playerScore === 5 || computerScore === 5) {
+        isGameOver = true;
+        appElement.classList.add('blur-background');
+        gameoverSectionElement.style.visibility = 'visible';
+        gameoverSectionElement.children[0].innerHTML = (winner == 'Player') ? 'YOU WON!' : 'YOU LOST!';
+    }
+}
+
+function resetGame() {
+    isGameOver = false;
+    appElement.classList.remove('blur-background');
+    gameoverSectionElement.style.visibility = 'hidden';
+    playerOption = null;
+    computerOption = null;
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreElement.innerHTML = playerScore;
+    computerScoreElement.innerHTML = computerScore;
+    roundInfoElement.innerHTML = '';
 }
