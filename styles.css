@@ -37,6 +37,8 @@ body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(18, 25, 45);
+    color: white;
 }
 
 /* A elements that don't have a class get default styles */
@@ -121,7 +123,7 @@ select {
     flex-direction: column;
     width: 200px;
     height: 200px;
-    border: 2px solid black;
+    border: 2px solid rgb(157, 157, 157);
     border-radius: 10px;
     padding-bottom: 20px;
     transition: all 0.5s ease;
@@ -169,4 +171,12 @@ select {
     font-size: 50px;
     font-weight: bold;
     text-align: center;
+}
+
+.round-info-container {
+    height: 50px;
+}
+
+.round-info-message {
+    font-size: 20px;
 }

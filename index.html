@@ -4,10 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
-        <script src="./main.js"></script>
         <title>Odin Rock Paper Scissors</title>
     </head>
-
+    
     <body>
         <div id="app">
             <p class="title">Rock Paper Scissors</p>
@@ -16,31 +15,37 @@
                 <p class="option-main-text">Choose an option from below</p>
                 <div class="divider-50px"></div>
                 <div class="option-list">
-                    <div class="option">
+                    <div id="option-rock" class="option">
                         <img src="./assets/images/rock.png" alt="Rock" class="option-img">
-                        <p class="option-description">Rock</p>
+                        <p class="option-description">ROCK</p>
                     </div>
-                    <div class="option">
+                    <div id="option-paper" class="option">
                         <img src="./assets/images/paper.png" alt="Paper" class="option-img">
-                        <p class="option-description">Paper</p>
+                        <p class="option-description">PAPER</p>
                     </div>
-                    <div class="option">
+                    <div id="option-scissors" class="option">
                         <img src="./assets/images/scissors.png" alt="Scissors" class="option-img">
-                        <p class="option-description">Scissors</p>
+                        <p class="option-description">SCISSORS</p>
                     </div>
                 </div>
             </section>
-            <div class="divider-150px"></div>
+            <div class="divider-100px"></div>
+            <div class="round-info-container">
+                <p id="round-info" class="round-info-message"></p>
+            </div>
+            <div class="divider-50px"></div>
             <section class="score-section">
                 <div class="player">
                     <p class="player-name">YOU</p>
                     <p id="player-score" class="score">0</p>
                 </div>
+                <p style="font-weight: bold;">-</p>
                 <div>
                     <p class="player-name">COMPUTER</p>
                     <p id="computer-score" class="score">0</p>
                 </div>
             </section>
         </div>
+        <script type="text/javascript" src="./main.js"></script>
     </body>
 </html>
